@@ -1,12 +1,16 @@
 var x=require('readline');
 var y=x.createInterface(process.stdin,process.stdout);
-function factorial(n)
+y.question("Enter a number\n",function(n)
 {
-  if(n==0)
+  var a=parseInt(n);
+  function fact(a)
   {
-    return 1;
+    if(a==0)
+    {
+      return 1;
+    }
+    return a*fact(a-1);
   }
-  return n*factorial(n-1);
-}
-console.log("Factorial of a number is:");
-console.log(factorial(5));
+  console.log("Factorial of number is:");
+  console.log(fact(a));
+});
